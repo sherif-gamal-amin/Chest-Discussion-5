@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest Discussion (5)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .quiz-container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .timer {
+            color: red;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            display: none;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct {
+            color: green;
+        }
+        .question-result {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Chest Discussion (5)</h1>
+        <div class="timer" id="timer">Time remaining: 60 seconds</div>
+
+        <div class="question" id="question-1">
+            <p>1- A 56-year-old man attends your clinic with a three-month history of a productive cough with blood-tinged sputum, following his return from India. Associated symptoms include lethargy, night sweats and decreased appetite. He is normally fit and healthy with no past medical history. On examination, the patient’s chest has good air entry bilaterally with no added sounds and his temperature is 37.3°C. A sputum sample sent from the patient’s GP reveals a growth of acid fast bacilli. From the list below, which is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="Pulmonary embolism"> Pulmonary embolism</label>
+                <label><input type="radio" name="q1" value="Tuberculosis"> Tuberculosis</label>
+                <label><input type="radio" name="q1" value="Bronchitis"> Bronchitis</label>
+                <label><input type="radio" name="q1" value="Pneumonia"> Pneumonia</label>
+                <label><input type="radio" name="q1" value="Bronchogenic carcinoma"> Bronchogenic carcinoma</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-2">
+            <p>2- Your clinic patient has been diagnosed with pulmonary tuberculosis (TB) following a three-month history of haemoptysis and fever. The patient is due to start on treatment and you are asked by your registrar which of the following regimes is the most suitable. The patient has no known drug allergies and, in addition, liver function tests and urea and electrolytes results are all within normal ranges. From the list below, which of the following answers is the most appropriate and recommended treatment regimen for this patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="Three months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by three months of isoniazid and rifampicin"> Three months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by three months of isoniazid and rifampicin</label>
+                <label><input type="radio" name="q2" value="Four months of isoniazid and rifampicin, followed by two months of isoniazid, rifampicin, ethambutol and pyrazinamide"> Four months of isoniazid and rifampicin, followed by two months of isoniazid, rifampicin, ethambutol and pyrazinamide</label>
+                <label><input type="radio" name="q2" value="Six months of isoniazid, rifampicin, ethambutol and pyrazinamide"> Six months of isoniazid, rifampicin, ethambutol and pyrazinamide</label>
+                <label><input type="radio" name="q2" value="Six months of isoniazid and rifampicin"> Six months of isoniazid and rifampicin</label>
+                <label><input type="radio" name="q2" value="Two months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by four months of isoniazid and rifampicin"> Two months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by four months of isoniazid and rifampicin</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-3">
+            <p>3- Regarding immunity, which of the following induced by acid fast bacilli?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="IgM"> IgM</label>
+                <label><input type="radio" name="q3" value="IgG"> IgG</label>
+                <label><input type="radio" name="q3" value="IgA"> IgA</label>
+                <label><input type="radio" name="q3" value="cell mediated reaction"> cell mediated reaction</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-4">
+            <p>4- 45 years old man has been diagnosed with pulmonary tuberculosis. Which of the following investigations is essential prior to starting antituberculous therapy?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="Full blood count"> Full blood count</label>
+                <label><input type="radio" name="q4" value="Liver function tests"> Liver function tests</label>
+                <label><input type="radio" name="q4" value="Plasma glucose"> Plasma glucose</label>
+                <label><input type="radio" name="q4" value="Urine for acid fast bacilli"> Urine for acid fast bacilli</label>
+                <label><input type="radio" name="q4" value="Vitamin B6"> Vitamin B6</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-5">
+            <p>5- A 43-year-old man from South Africa is reviewed in clinic. He has recently started treatment for tuberculosis but is complaining of a deterioration in his vision. Which one of the following drugs is most likely to cause decreased visual acuity?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="Rifampicin"> Rifampicin</label>
+                <label><input type="radio" name="q5" value="Streptomycin"> Streptomycin</label>
+                <label><input type="radio" name="q5" value="isoniazid"> isoniazid</label>
+                <label><input type="radio" name="q5" value="Ethambutol"> Ethambutol</label>
+                <label><input type="radio" name="q5" value="Pyrazinamide"> Pyrazinamide</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-6">
+            <p>6- A 45-year-old man presents with pain and swelling of his left big toe. He has recently started treatment for active tuberculosis. Which one of the following medications is likely to be responsible?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="Streptomycin"> Streptomycin</label>
+                <label><input type="radio" name="q6" value="Rifampicin"> Rifampicin</label>
+                <label><input type="radio" name="q6" value="Ethambutol"> Ethambutol</label>
+                <label><input type="radio" name="q6" value="Isoniazid"> Isoniazid</label>
+                <label><input type="radio" name="q6" value="Pyrazinamide"> Pyrazinamide</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-7">
+            <p>7- A 45-year-old man with diabetes, diagnosed with pulmonary TB who started treatment two months ago, presents to you with a week’s history of pins and needles in his hands and feet with associated numbness. He tells you that his symptoms started since he stopped taking the vitamins given to him at the start of his TB treatment. From the list below, which of the following drugs is responsible for the symptoms described by the patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="Pyrazinamide"> Pyrazinamide</label>
+                <label><input type="radio" name="q7" value="Rifampicin"> Rifampicin</label>
+                <label><input type="radio" name="q7" value="Ethambutol"> Ethambutol</label>
+                <label><input type="radio" name="q7" value="Isoniazid"> Isoniazid</label>
+                <label><input type="radio" name="q7" value="None of the above"> None of the above</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-8">
+            <p>8- Which of the anti-tuberculosis drugs should be totally avoided in pregnancy:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="lNH"> lNH</label>
+                <label><input type="radio" name="q8" value="Pyrazinamide"> Pyrazinamide</label>
+                <label><input type="radio" name="q8" value="Rifampicin"> Rifampicin</label>
+                <label><input type="radio" name="q8" value="Streptomycin"> Streptomycin</label>
+                <label><input type="radio" name="q8" value="Ethambutol"> Ethambutol</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-9">
+            <p>9- 55 years old asymptomatic man with upper lobe cavity on chest X ray. What is the most important initial investigation that should be performed?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="HIV antibody test"> HIV antibody test</label>
+                <label><input type="radio" name="q9" value="mantoux test"> mantoux test</label>
+                <label><input type="radio" name="q9" value="Lumbar puncture"> Lumbar puncture</label>
+                <label><input type="radio" name="q9" value="Sputum culture"> Sputum culture</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-10">
+            <p>10- A 54 year old man is due to start a monoclonal antibody-based therapy for active Crohn's disease but the radiologist has noted a minor abnormality on the patient's recent CXR. The patient had a bacille Calmette-Guerin (BCG) vaccine in childhood and has no known TB contacts. He has no respiratory symptoms. Local guidance suggests checking an interferon-gamma release assay (IGRA) on a peripheral blood sample. Which one of the following statements is true with regard to the IGRA?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A positive result should prompt the clinician to start antituberculous chemotherapy"> A positive result should prompt the clinician to start antituberculous chemotherapy</label>
+                <label><input type="radio" name="q10" value="It is more specific than tuberculin skin testing"> It is more specific than tuberculin skin testing</label>
+                <label><input type="radio" name="q10" value="It is now the first-line test for diagnosis of active TB"> It is now the first-line test for diagnosis of active TB</label>
+                <label><input type="radio" name="q10" value="It is only positive where there is systemic mycobacterial infection"> It is only positive where there is systemic mycobacterial infection</label>
+                <label><input type="radio" name="q10" value="It measures the release of interferon-alpha from sensitised T cells"> It measures the release of interferon-alpha from sensitised T cells</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-11">
+            <p>11- A 39-year-old female who has recently emigrated from sub-Saharan Africa is screened for tuberculosis. She reports being fit and well with no past medical history and has never had a BCG vaccination. Her chest x-ray is normal so she has a Mantoux test which is positive. An interferon gamma test is also performed which is positive. A HIV test is requested which is negative. What treatment would you recommend?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="Isoniazid for 6 months"> Isoniazid for 6 months</label>
+                <label><input type="radio" name="q11" value="Rifampicin, isoniazid pyrazinamide and ethambutol for 6 months"> Rifampicin, isoniazid pyrazinamide and ethambutol for 6 months</label>
+                <label><input type="radio" name="q11" value="Observe"> Observe</label>
+                <label><input type="radio" name="q11" value="Rifampicin, isoniazid, pyrazinamide and ethambutol for 2 months then step down to rifampicin and isoniazid for 4 months"> Rifampicin, isoniazid, pyrazinamide and ethambutol for 2 months then step down to rifampicin and isoniazid for 4 months</label>
+                <label><input type="radio" name="q11" value="Rifampicin and isoniazid for 6 months"> Rifampicin and isoniazid for 6 months</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-12">
+            <p>12- A 64-year-old woman presents with 6 weeks of fatigue, dyspnea, and night sweats. She has lost 11 lb. She has no history of trauma, has never had surgery, and takes no medications. Chest x-ray reveals a large right-sided pleural effusion. Thoracentesis yields pleural fluid that appears milky. Pleural fluid triglyceride level is 500 mg/dL. Which of the following disorders is most likely in this patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="Lymphoma"> Lymphoma</label>
+                <label><input type="radio" name="q12" value="Congestive heart failure"> Congestive heart failure</label>
+                <label><input type="radio" name="q12" value="Pulmonary embolism"> Pulmonary embolism</label>
+                <label><input type="radio" name="q12" value="Pneumonia"> Pneumonia</label>
+                <label><input type="radio" name="q12" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-13">
+            <p>13- Which one of the following would cause a rise in the carbon monoxide transfer factor (TLCO)?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="Emphysema"> Emphysema</label>
+                <label><input type="radio" name="q13" value="Pulmonary embolism"> Pulmonary embolism</label>
+                <label><input type="radio" name="q13" value="Pulmonary, alveolar haemorrhage"> Pulmonary, alveolar haemorrhage</label>
+                <label><input type="radio" name="q13" value="Pneumonia"> Pneumonia</label>
+                <label><input type="radio" name="q13" value="Pulmonary fibrosis"> Pulmonary fibrosis</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-14">
+            <p>14- A 41-year-old man presents to his doctor with a persistent cough. This has been present for the past six months and for the past two weeks he has been coughing up blood on a daily basis. He also feels more short-of-breath when exerting himself than normal. He is a non-smoker and has no past medical history of note. On examination he is noted to have reduced air entry in the right upper zone. A chest x-ray shows a right upper lobe collapse and a subsequent bronchoscopy demonstrates a cherry-red lesion in the right superior lobar bronchus. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="Small cell lung carcinoma"> Small cell lung carcinoma</label>
+                <label><input type="radio" name="q14" value="Large cell lung carcinoma"> Large cell lung carcinoma</label>
+                <label><input type="radio" name="q14" value="Lung carcinoid"> Lung carcinoid</label>
+                <label><input type="radio" name="q14" value="Bronchioloalveolar carcinoma"> Bronchioloalveolar carcinoma</label>
+                <label><input type="radio" name="q14" value="Bronchial adenocarcinoma"> Bronchial adenocarcinoma</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-15">
+            <p>15- A 36 year old non-smoker presents with isolated haemoptysis. She has no systemic symptoms but has been expectorating small amounts of fresh blood most mornings in the last 2 weeks. She denies epistaxis and is quite clear she has been coughing blood rather than vomiting. A CT scan identifies an area of collapse in the left upper lobe (LUL) and a possible small tumour in the main bronchus. Bronchoscopy reveals a vascular-looking tumour emerging from the LUL orifice. What is the most likely tumour type for this Lesion?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="Adenocarcinoma"> Adenocarc inoma</label>
+                <label><input type="radio" name="q15" value="Breast"> Breast</label>
+                <label><input type="radio" name="q15" value="Carcinoid"> Carcinoid</label>
+                <label><input type="radio" name="q15" value="Small cell"> Small cell</label>
+                <label><input type="radio" name="q15" value="Squamous"> Squamous</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-16">
+            <p>16- Vesicular breathing is characterised by all of the following except ..</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="Expiratory time more than inspiratory time"> Expiratory time more than inspiratory time</label>
+                <label><input type="radio" name="q16" value="Occur in normal persons"> Occur in normal persons</label>
+                <label><input type="radio" name="q16" value="No gap between inspiration and expiration"> No gap between inspiration and expiration</label>
+                <label><input type="radio" name="q16" value="All of the above"> All of the above</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-17">
+            <p>17- Bronchophony may be found in:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="Pneumothorax"> Pneumothorax</label>
+                <label><input type="radio" name="q17" value="Empyema"> Empyema</label>
+                <label><input type="radio" name="q17" value="Lobar Consolidation"> Lobar Consolidation</label>
+                <label><input type="radio" name="q17" value="Pleural effusion"> Pleural effusion</label>
+                <label><input type="radio" name="q17" value="Chylothorax"> Chylothorax</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-18">
+            <p>18- d'Espine sign is breathing heard over the vertebral spines below the level of tracheal bifurcation; below the fourth thoracic spine in adults if there is subcarinal lymphadenopathy. Which type of breathing is heard in d'Espine sign??</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="Bronchial breathing"> Bronchial breathing</label>
+                <label><input type="radio" name="q18" value="Normal vesicular breathing"> Normal vesicular breathing</label>
+                <label><input type="radio" name="q18" value="Harsh vesicular breathing"> Harsh vesicular breathing</label>
+                <label><input type="radio" name="q18" value="All of the above"> All of the above</label>
+                <label><input type="radio" name="q18" value="None of the above"> None of the above</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-19">
+            <p>19- Campbell sign is downward displacement of trachea during inspiration occur in ...</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="COPD"> COPD</label>
+                <label><input type="radio" name="q19" value="aortic aneurysm"> aortic aneurysm</label>
+                <label><input type="radio" name="q19" value="Bronchial asthma"> Bronchial asthma</label>
+                <label><input type="radio" name="q19" value="Bronchiectasis"> Bronchiectasis</label>
+                <label><input type="radio" name="q19" value="Pneumothorax"> Pneumothorax</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-20">
+            <p>20- Commonest cause of pleural effusion is ..</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="Liver cirrhosis"> Liver cirrhosis</label>
+                <label><input type="radio" name="q20" value="Left ventricular failure"> Left ventricular failure</label>
+                <label><input type="radio" name="q20" value="Nephrotic syndrome"> Nephrotic syndrome</label>
+                <label><input type="radio" name="q20" value="Malignancy"> Malignancy</label>
+                <label><input type="radio" name="q20" value="Tuberculosis"> Tuberculosis</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-21">
+            <p>21- Which of the following is a cause of transudative pleural effusion?</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="Drug-induced pleural effusion"> Drug-induced pleural effusion</label>
+                <label><input type="radio" name="q21" value="Hypothyroidism"> Hypothyroidism</label>
+                <label><input type="radio" name="q21" value="Pneumonia"> Pneumonia</label>
+                <label><input type="radio" name="q21" value="Rheumatoid arthritis"> Rheumatoid arthritis</label>
+                <label><input type="radio" name="q21" value="Tuberculosis"> Tuberculosis</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-22">
+            <p>22- Posterolateral chest X ray shows unilateral moderate to sever pleural effusion. What is the next step ??</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="Lateral chest X ray"> Lateral chest X ray</label>
+                <label><input type="radio" name="q22" value="Pleural aspiration with ultrasound guided"> Pleural aspiration with ultrasound guided</label>
+                <label><input type="radio" name="q22" value="Pleural biopsy"> Pleural biopsy</label>
+                <label><input type="radio" name="q22" value="Bronchoscopy"> Bronchoscopy</label>
+                <label><input type="radio" name="q22" value="CT chest"> CT chest</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-23">
+            <p>23- 79 year-old man is admitted with a right lower lobe pneumonia. As well as showing consolidation there also appears to be a moderate sized pleural effusion on the same side. An ultrasound guided pleural fluid aspiration is performed. The appearance of the fluid is clear and is sent off for culture. Whilst awaiting the culture results, which one of the following is the most important factor when determining whether a chest tube is placed?</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="Glucose of the pleural fluid"> Glucose of the pleural fluid</label>
+                <label><input type="radio" name="q23" value="LDH of the pleural fluid"> LDH of the pleural fluid</label>
+                <label><input type="radio" name="q23" value="pH of the pleural fluid"> pH of the pleural fluid</label>
+                <label><input type="radio" name="q23" value="Potassium of the pleural fluid"> Potassium of the pleural fluid</label>
+                <label><input type="radio" name="q23" value="Protein of the pleural fluid"> Protein of the pleural fluid</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-24">
+            <p>24- Which one of the following statements is true? Light's criteria includes:</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="Pleural fluid: serum protein ratio > 0.6"> Pleural fluid: serum protein ratio > 0.6</label>
+                <label><input type="radio" name="q24" value="Pleural fluid lactate dehydrogenase (LDH) > two-thirds of the upper limit of normal serum LDH"> Pleural fluid lactate dehydrogenase (LDH) > two-thirds of the upper limit of normal serum LDH</label>
+                <label><input type="radio" name="q24" value="Pleural fluid LDH < two-thirds of the upper limit of normal serum LDH"> Pleural fluid LDH < two-thirds of the upper limit of normal serum LDH</label>
+                <label><input type="radio" name="q24" value="Pleural fluid LDH: serum LDH ratio > 0.5"> Pleural fluid LDH: serum LDH ratio > 0.5</label>
+                <label><input type="radio" name="q24" value="Pleural fluid: serum protein ratio < 0.5"> Pleural fluid: serum protein ratio < 0.5</label>
+        5</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-25">
+            <p>25- A 63-year-old man who has been previously healthy is admitted to the hospital with a 2-day history of cough, rigors, fever, and right-sided pleuritic chest pain. Chest x-ray shows consolidation of the right lower lobe (RLL) and a free-flowing right pleural effusion. Thoracentesis is performed, and the pleural fluid has the following characteristics: Cell count = 1110/mm3 Glucose = 75 mg/dL(serum glucose = 85 mg/dL) Protein = 4.0 g/dL(serum protein = 7.0 g/dL) LDH = 400 U/L(serum LDH = 200 U/L) pH = 7.35 What is the pathogenesis of the pleural effusion?</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="Increase in hydrostatic pressure"> Increase in hydrostatic pressure</label>
+                <label><input type="radio" name="q25" value="Decrease in oncotic pressure"> Decrease in oncotic pressure</label>
+                <label><input type="radio" name="q25" value="Increased permeability of visceral pleural membrane capillaries"> Increased permeability of visceral pleural membrane capillaries</label>
+                <label><input type="radio" name="q25" value="Bacterial infection in the pleural space"> Bacterial infection in the pleural space</label>
+                <label><input type="radio" name="q25" value="Haemorrhage into the pleural space"> Haemorrhage into the pleural space</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-26">
+            <p>26- Bilateral pleural effusion is commonly seen in all EXCEPT:</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="SLE"> SLE</label>
+                <label><input type="radio" name="q26" value="Nephrotic syndrome"> Nephrotic syndrome</label>
+                <label><input type="radio" name="q26" value="Pulmonary tuberculosis"> Pulmonary tuberculosis</label>
+                <label><input type="radio" name="q26" value="Congestive cardiac failure"> Congestive cardiac failure</label>
+                <label><input type="radio" name="q26" value="After coronary artery bypass graft"> After coronary artery bypass graft</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-27">
+            <p>27- Hemorrhagic pleural effusion may be seen in:</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="Cirrhosis of liver."> Cirrhosis of liver.</label>
+                <label><input type="radio" name="q27" value="Pulmonary tuberculosis"> Pulmonary tuberculosis</label>
+                <label><input type="radio" name="q27" value="SLE"> SLE</label>
+                <label><input type="radio" name="q27" value="Myxedema"> Myxedema</label>
+                <label><input type="radio" name="q27" value="Nephrotic syndrome"> Nephrotic syndrome</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-28">
+            <p>28- Hemorrhagic pleural effusion is not characteristic of:</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+                <label><input type="radio" name="q28" value="Acute pulmonary thromboembolism"> Acute pulmonary thromboembolism</label>
+                <label><input type="radio" name="q28" value="Tuberculous effusion"> Tuberculous effusion</label>
+                <label><input type="radio" name="q28" value="Acute pancreatitis"> Acute pancreatitis</label>
+                <label><input type="radio" name="q28" value="Metastatic cancer"> Metastatic cancer</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-29">
+            <p>29- Regarding pulmonary eosinophilia; which statement is CORRECT?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="It means radiographic lung abnormalities with peripheral eosinophilia more than 1500/mcL"> It means radiographic lung abnormalities with peripheral eosinophilia more than 1500/mcL</label>
+                <label><input type="radio" name="q29" value="Pulmonary eosinophilia Could be caused by drugs such as sulphasalazine"> Pulmonary eosinophilia Could be caused by drugs such as sulphasalazine</label>
+                <label><input type="radio" name="q29" value="All helminthic infections can cause pulmonary eosinophilia"> All helminthic infections can cause pulmonary eosinophilia</label>
+                <label><input type="radio" name="q29" value="Hypereosinophilic syndrome is multi-organ tissue eosinophilic infiltration with or without peripheral eosinophilia"> Hypereosinophilic syndrome is multi-organ tissue eosinophilic infiltration with or without peripheral eosinophilia</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-30">
+            <p>30- All of the following statements regarding mastocytosis are TRUE EXCEPT:</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="Elevated serum tryptase suggests aggressive disease."> Elevated serum tryptase suggests aggressive disease.</label>
+                <label><input type="radio" name="q30" value="Eosinophilia is common."> Eosinophilia is common.</label>
+                <label><input type="radio" name="q30" value="It is often associated with lymphoid neoplasm."> It is often associated with lymphoid neoplasm.</label>
+                <label><input type="radio" name="q30" value="Urticaria pigmentosa is the most common clinical manifestation"> Urticaria pigmentosa is the most common clinical manifestation</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-31">
+            <p>31- A 25-year-old man presents to the clinic for evaluation of infertility. He has a lifelong history of a productive cough and recurrent pulmonary infections. On his review of symptoms he has indicated chronic problems with abdominal pain, diarrhoea, and difficulty gaining weight. He also has diabetes mellitus. His chest x-ray suggests bronchiectasis. Which is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q31" value="Chronic obstructive pulmonary disease (COPD)"> Chronic obstructive pulmonary disease (COPD)</label>
+                <label><input type="radio" name="q31" value="Immunoglobulin deficiency"> Immunoglobulin deficiency</label>
+                <label><input type="radio" name="q31" value="Cystic fibrosis"> Cystic fibrosis</label>
+                <label><input type="radio" name="q31" value="Whipple disease"> Whipple disease</label>
+                <label><input type="radio" name="q31" value="Asthma"> Asthma</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-32">
+            <p>32- Cystic fibrosis is due to a defect in the cystic fibrosis transmembrane conductance regulator (CFTR) gene. Which chromosome is this gene located on?</p>
+            <div class="options">
+                <label><input type="radio" name="q32" value="Chromosome 3"> Chromosome 3</label>
+                <label><input type="radio" name="q32" value="Chromosome 7"> Chromosome 7</label>
+                <label><input type="radio" name="q32" value="Chromosome 11"> Chromosome 11</label>
+                <label><input type="radio" name="q32" value="Chromosome 14"> Chromosome 14</label>
+                <label><input type="radio" name="q32" value="Chromosome 15"> Chromosome 15</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-33">
+            <p>33- A 28-year-old woman is evaluated for recurrent lung and sinus infections. She recalls having at least yearly episodes of bronchitis beginning in her early teens. For the past 5 years, she states that she has been on antibiotics at least three times yearly for respiratory or sinus infections. She also reports that she has had difficulty gaining weight and has always felt short compared to her peers. On physical examination, the patient has a body mass index of 18.5 kg/m2. Her oxygen saturation is 95% on room air at rest. Nasal polyps are present. Coarse rhonchi and crackles are heard in the bilateral upper lung zones. A chest radiograph shows bilateral upper lobe bronchiectasis with areas of mucous plugging. You are concerned about the possibility of undiagnosed cystic fibrosis. Which of the following tests would provide the strongest support for the diagnosis of cystic fibrosis in this individual?</p>
+            <div class="options">
+                <label><input type="radio" name="q33" value="DNA analysis demonstrating one copy of the F508del allele"> DNA analysis demonstrating one copy of the F508del allele</label>
+                <label><input type="radio" name="q33" value="Decreased baseline nasal potential difference"> Decreased baseline nasal potential difference</label>
+                <label><input type="radio" name="q33" value="Presence of P aeruginosa on repeated sputum cultures"> Presence of P aeruginosa on repeated sputum cultures</label>
+                <label><input type="radio" name="q33" value="Sweat chloride values >40 mmol/L"> Sweat chloride values >40 mmol/L</label>
+                <label><input type="radio" name="q33" value="Sweat chloride values >60 mmol/L"> Sweat chloride values >60 mmol/L</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-34">
+            <p>34- A 32 year old cystic fibrosis patient presents with massive haemoptysis in the form of 250 ml of fresh red blood. The patient is actively coughing more blood but is hemodynamically stable (BP 145/72 mmHg, pulse 98 beats/min). The most useful investigation is likely to be:</p>
+            <div class="options">
+                <label><input type="radio" name="q34" value="Bronchial artery angiography"> Bronchial artery angiography</label>
+                <label><input type="radio" name="q34" value="Bronchoscopy"> Bronchoscopy</label>
+                <label><input type="radio" name="q34" value="Coagulation studies"> Coagulation studies</label>
+                <label><input type="radio" name="q34" value="CTPA"> CTPA</label>
+                <label><input type="radio" name="q34" value="Sputum culture"> Sputum culture</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-35">
+            <p>35- A newborn female baby is diagnosed with cystic fibrosis following an episode of meconium ileus shortly after birth. Which one of the following is least likely to occur as a consequence of her underlying diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q35" value="Delayed puberty"> Delayed puberty</label>
+                <label><input type="radio" name="q35" value="Nasal polyps"> Nasal polyps</label>
+                <label><input type="radio" name="q35" value="Diabetes mellitus"> Diabetes mellitus</label>
+                <label><input type="radio" name="q35" value="Rectal prolapse"> Rectal prolapse</label>
+                <label><input type="radio" name="q35" value="Arthropathy"> Arthropathy</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-36">
+            <p>36- A 25-year-old woman with cystic fibrosis is diagnosed with chronic pancreatitis. She is at risk for all of the following complications EXCEPT:</p>
+            <div class="options">
+                <label><input type="radio" name="q36" value="Vitamin B12 deficiency"> Vitamin B12 deficiency</label>
+                <label><input type="radio" name="q36" value="Vitamin A deficiency"> Vitamin A deficiency</label>
+                <label><input type="radio" name="q36" value="Pancreatic carcinoma"> Pancreatic carcinoma</label>
+                <label><input type="radio" name="q36" value="Niacin deficiency"> Niacin deficiency</label>
+                <label><input type="radio" name="q36" value="Steatorrhea"> Steatorrhea</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-37">
+            <p>37- A 8 year-old male with a history of cystic fibrosis presents to the clinic for annual review. What is the most appropriate advice regarding his diet?</p>
+            <div class="options">
+                <label><input type="radio" name="q37" value="High calorie and low fat with pancreatic enzyme supplementation for every meal"> High calorie and low fat with pancreatic enzyme supplementation for every meal</label>
+                <label><input type="radio" name="q37" value="High calorie and low fat with pancreatic enzyme supplementation for evening meal"> High calorie and low fat with pancreatic enzyme supplementation for evening meal</label>
+                <label><input type="radio" name="q37" value="Normal calorie and low fat with pancreatic enzyme supplementation for every meal"> Normal calorie and low fat with pancreatic enzyme supplementation for every meal</label>
+                <label><input type="radio" name="q37" value="High calorie and high fat with pancreatic enzyme supplementation for evening meal"> High calorie and high fat with pancreatic enzyme supplementation for evening meal</label>
+                <label><input type="radio" name="q37" value="High calorie and high fat with pancreatic enzyme supplementation for every meal"> High calorie and high fat with pancreatic enzyme supplementation for every meal</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-38">
+            <p>38- Which of the following organisms, responsible for causing chronic pneumonia, is most commonly found in patients with longstanding cystic fibrosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q38" value="L. pneumophilia"> L. pneumophilia</label>
+                <label><input type="radio" name="q38" value="S. pneumonia"> S. pneumonia</label>
+                <label><input type="radio" name="q38" value="Burkholderia cepacia"> Burkholderia cepacia</label>
+                <label><input type="radio" name="q38" value="Pseudomonas aeruginosa"> Pseudomonas aeruginosa</label>
+                <label><input type="radio" name="q38" value="H. influenza"> H. influenza</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-39">
+            <p>39- A 45-year-old man with alcoholism is admitted with a diagnosis of acute pancreatitis. He requires large volumes of fluid to maintain blood pressure and urine output, but 24 hours after admission, he appears in stable condition. On the fourth hospital day, the patient develops rapidly progressive respiratory distress, with laboured breathing and tachypnea. His temperature is 37.0° C, pulse is 100/min, blood pressure is 130/75 mm Hg, and RR is 22/min. Intercostal retraction and crackles are appreciated on chest examination. Blood tests show: Arterial blood gas (room air) pH  7.32 PaO2  52 mm Hg PaCO2  51 mm Hg Hematocrit 42% Leukocytes 9800/mm3 Glucose 110 mg/dL BUN 20 mg/dL AST 98 U/L ALT 60 U/L Amylase 280 U/L A chest x-ray film reveals diffuse bilateral infiltrates, a normal cardiac silhouette, and minimal pleural effusions. Which of the following is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q39" value="Acute bilateral bronchopneumonia"> Acute bilateral bronchopneumonia</label>
+                <label><input type="radio" name="q39" value="Acute respiratory distress syndrome"> Acute respiratory distress syndrome</label>
+                <label><input type="radio" name="q39" value="Cardiogenic pulmonary edema"> Cardiogenic pulmonary edema</label>
+                <label><input type="radio" name="q39" value="Exacerbation of acute pancreatitis"> Exacerbation of acute pancreatitis</label>
+                <label><input type="radio" name="q39" value="Pulmonary embolism"> Pulmonary embolism</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-40">
+            <p>40- Acute lung injury (ARDS) should be differentiated from:</p>
+            <div class="options">
+                <label><input type="radio" name="q40" value="Acute LVF"> Acute LVF</label>
+                <label><input type="radio" name="q40" value="Congestive cardiac failure"> Congestive cardiac failure</label>
+                <label><input type="radio" name="q40" value="Acute severe asthma"> Acute severe asthma</label>
+                <label><input type="radio" name="q40" value="Spontaneous pneumothorax"> Spontaneous pneumothorax</label>
+                <label><input type="radio" name="q40" value="Narcotic overdose"> Narcotic overdose</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-41">
+            <p>41- Pink, frothy and profuse sputum is seen in:</p>
+            <div class="options">
+                <label><input type="radio" name="q41" value="Pneumoconiosis"> Pneumoconiosis</label>
+                <label><input type="radio" name="q41" value="Lobar pneumonia"> Lobar pneumonia</label>
+                <label><input type="radio" name="q41" value="Acute pulmonary edema"> Acute pulmonary edema</label>
+                <label><input type="radio" name="q41" value="Aspergilloma"> Aspergilloma</label>
+                <label><input type="radio" name="q41" value="ARDS"> ARDS</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-42">
+            <p>42- Which one of the following is not part of the diagnostic criteria of acute respiratory distress syndrome (ARDS)?</p>
+            <div class="options">
+                <label><input type="radio" name="q42" value="Bilateral infiltrates on CXR"> Bilateral infiltrates on CXR</label>
+                <label><input type="radio" name="q42" value="Non-cardiogenic"> Non-cardiogenic</label>
+                <label><input type="radio" name="q42" value="P02/Fi02 < 200 mmHg"> P02/Fi02 < 200 mmHg</label>
+                <label><input type="radio" name="q42" value="Respiratory rate > 24/min"> Respiratory rate > 24/min</label>
+                <label><input type="radio" name="q42" value="Acute onset"> Acute onset</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-43">
+            <p>43- All of the following are criteria of ARDS except ..</p>
+            <div class="options">
+                <label><input type="radio" name="q43" value="acute onset"> acute onset</label>
+                <label><input type="radio" name="q43" value="bilateral infiltrates on CXR"> bilateral infiltrates on CXR</label>
+                <label><input type="radio" name="q43" value="non-cardiogenic"> non-cardiogenic</label>
+                <label><input type="radio" name="q43" value="p02/Fi02: < 200 mmHg"> p02/Fi02: < 200 mmHg</label>
+                <label><input type="radio" name="q43" value="Pulmonary capillary wedge pressure more than 19"> Pulmonary capillary wedge pressure more than 19</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-44">
+            <p>44- A 42-year-old woman comes to the hospital with 3 days of fever, nausea, vomiting, and right-sided flank pain. On examination she appears ill and has right costovertebral angle tenderness. Urinalysis is positive for leukocyte esterase, and microscopic examination of urine reveals numerous white blood cells and gram-negative rods. She is admitted with a diagnosis of pyelonephritis and is begun on IV ceftriaxone. Blood cultures subsequently are positive for Escherichia coli sensitive to ceftriaxone. She initially improves, but on the third hospital day complains of severe dyspnea that is not relieved by the administration of oxygen. On examination that day she appears ill and has tachypnea, tachycardia, labored breathing, cyanosis, and diffuse rales. Arterial blood gases (ABGs) drawn while on a 100% nonrebreathing mask show pH = 7.45, partial pressure of oxygen (Po2 ) = 45, and partial pressure of carbon dioxide (Pco2) = 38. An emergency echocardiogram shows normal left ventricular ejection fraction and no evidence of elevated left atrial pressures. What is the best treatment for this condition?</p>
+            <div class="options">
+                <label><input type="radio" name="q44" value="Broadening antibiotic coverage with an antipseudomonal penicillin"> Broadening antibiotic coverage with an antipseudomonal penicillin</label>
+                <label><input type="radio" name="q44" value="Addition of vancomycin to cover for methicillin-resistant Staphylococcus aureus (MRSA)"> Addition of vancomycin to cover for methicillin-resistant Staphylococcus aureus (MRSA)</label>
+                <label><input type="radio" name="q44" value="IV corticosteroids"> IV corticosteroids</label>
+                <label><input type="radio" name="q44" value="Mechanical ventilation with low tidal volumes and positive end-expiratory pressure (PEEP)"> Mechanical ventilation with low tidal volumes and positive end-expiratory pressure (PEEP)</label>
+                <label><input type="radio" name="q44" value="IV furosemide"> IV furosemide</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-45">
+            <p>45- Confirmatory test of COVID ??</p>
+            <div class="options">
+                <label><input type="radio" name="q45" value="PCR of nasopharyngeal swab"> PCR of nasopharyngeal swab</label>
+                <label><input type="radio" name="q45" value="CT chest"> CT chest</label>
+                <label><input type="radio" name="q45" value="Urine analysis"> Urine analysis</label>
+                <label><input type="radio" name="q45" value="Rapid antibody test"> Rapid antibody test</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-46">
+            <p>46- Which of the following is NOT common symptom of infection caused by the coronavirus?</p>
+            <div class="options">
+                <label><input type="radio" name="q46" value="High fever"> High fever</label>
+                <label><input type="radio" name="q46" value="Cough"> Cough</label>
+                <label><input type="radio" name="q46" value="Difficulty in breathing"> Difficulty in breathing</label>
+                <label><input type="radio" name="q46" value="diarrhoea"> diarrhoea</label>
+                <label><input type="radio" name="q46" value="dysuria"> dysuria</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-47">
+            <p>47- Which of the following is NOT the proper specimen for the identification of SARS-CoV?</p>
+            <div class="options">
+                <label><input type="radio" name="q47" value="Nasal secretions"> Nasal secretions</label>
+                <label><input type="radio" name="q47" value="Urine"> Urine</label>
+                <label><input type="radio" name="q47" value="Blood"> Blood</label>
+                <label><input type="radio" name="q47" value="Stool"> Stool</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-48">
+            <p>48- Central cyanosis occurs in all of the following except..</p>
+            <div class="options">
+                <label><input type="radio" name="q48" value="Reduced haemoglobin to 5 gm/ dl"> Reduced haemoglobin to 5 gm/ dl</label>
+                <label><input type="radio" name="q48" value="Pulmonary fibrosis"> Pulmonary fibrosis</label>
+                <label><input type="radio" name="q48" value="Methemoglobinemia"> Methemoglobinemia</label>
+                <label><input type="radio" name="q48" value="Shunt"> Shunt</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-49">
+            <p>49- All of the following are true about surface anatomy of oblique fissure except ..</p>
+            <div class="options">
+                <label><input type="radio" name="q49" value="Extend from 4th thoracic vertebrae"> Extend from 4th thoracic vertebrae</label>
+                <label><input type="radio" name="q49" value="Follows lateral border of scapula on abducted arm"> Follows lateral border of scapula on abducted arm</label>
+                <label><input type="radio" name="q49" value="Separates middle lobe from upper lobe on right lung"> Separates middle lobe from upper lobe on right lung</label>
+                <label><input type="radio" name="q49" value="Separates lower lobe from upper lobe on left lung"> Separates lower lobe from upper lobe on left lung</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-50">
+            <p>50- A 35-year-old female presents with shortness of breath. The following blood gases are obtained on room air: pH 7.54 pC02 20 mmhg pO2 75 mmhg Which one of the following should not be included on the list of differential diagnoses?</p>
+            <div class="options">
+                <label><input type="radio" name="q50" value="Opiate overdose"> Opiate overdose</label>
+                <label><input type="radio" name="q50" value="Pulmonary embolism"> Pulmonary embolism</label>
+                <label><input type="radio" name="q50" value="Pregnancy"> Pregnancy</label>
+                <label><input type="radio" name="q50" value="Encephalitis"> Encephalitis</label>
+                <label><input type="radio" name="q50" value="Anxiety"> Anxiety</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-51">
+            <p>51- A 69-year-old woman presents with a complaint of chronic cough. She is a former smoker, but quit over 20 years ago. She is healthy except for hypertension, for which she takes amlodipine; she is on no other medications. The cough has been present for 6 months. She produces scant clear sputum in the morning and denies hemoptysis or weight loss. The cough is more prominent at night. It is not exacerbated by exercise or cold exposure. There is no exposure history to potential lung toxins. She denies runny nose, nasal allergies, or postnasal drip. She has occasional heartburn, promptly relieved by two tablets of calcium carbonate. Physical examination and PA/lateral chest x-ray are normal. What is the next best step in the evaluation of this patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q51" value="Therapeutic trial of proton-pump inhibitor (PPI)"> Therapeutic trial of proton-pump inhibitor (PPI)</label>
+                <label><input type="radio" name="q51" value="Bronchoscopy"> Bronchoscopy</label>
+                <label><input type="radio" name="q51" value="CT scan of chest"> CT scan of chest</label>
+                <label><input type="radio" name="q51" value="Spirometry"> Spirometry</label>
+                <label><input type="radio" name="q51" value="Therapeutic trial of nasal corticosteroid and systemic decongestant"> Therapeutic trial of nasal corticosteroid and systemic decongestant</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-52">
+            <p>52- A 20-year-old fireman comes to the emergency room complaining of headache and dizziness after putting out a garage fire. He does not complain of shortness of breath, and the arterial blood gas shows a normal Po2. There is no cyanosis. Which of the following is the best first step in the management of this patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q52" value="Assess for methemoglobinemia"> Assess for methemoglobinemia</label>
+                <label><input type="radio" name="q52" value="Obtain ECG"> Obtain ECG</label>
+                <label><input type="radio" name="q52" value="Obtain carboxyhemoglobin level"> Obtain carboxyhemoglobin level</label>
+                <label><input type="radio" name="q52" value="Obtain CT scan of head"> Obtain CT scan of head</label>
+                <label><input type="radio" name="q52" value="Evaluate for anaemia"> Evaluate for anaemia</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-53">
+            <p>53- A 36-year-old woman is brought into intensive care after a house fire. She is obtunded but did not suffer any major burns. She is being treated for smoke inhalation. Her initial carboxyhemoglobin concentration is 25%. She is treated with 100% oxygen but remains obtunded. She subsequently develops generalised seizures. Her blood pressure rapidly declines to 60/40 mmHg. The heart rate is 150 bpm. The SaO2 reading is 98%. There is a ruddy appearance to the patient’s complexion, and a bitter almond odour is present. There is soot around the patient’s nose and mouth. The pupils are dilated, and the skin is diaphoretic. Which of the following tests will yield the diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q53" value="Ammonia concentration"> Ammonia concentration</label>
+                <label><input type="radio" name="q53" value="Blood lactate level"> Blood lactate level</label>
+                <label><input type="radio" name="q53" value="Carboxyhemoglobin level"> Carboxyhemoglobin level</label>
+                <label><input type="radio" name="q53" value="Red blood cell cyanide concentration"> Red blood cell cyanide concentration</label>
+                <label><input type="radio" name="q53" value="Methemoglobin level"> Methemoglobin level</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-54">
+            <p>54- Which is correct in type II respiratory failure:</p>
+            <div class="options">
+                <label><input type="radio" name="q54" value="p Po2 and p Pco2"> p Po2 and p Pco2</label>
+                <label><input type="radio" name="q54" value="p Po2 and normal Pco2"> p Po2 and normal Pco2</label>
+                <label><input type="radio" name="q54" value="Normal Po2 and n Pco2"> Normal Po2 and n Pco2</label>
+                <label><input type="radio" name="q54" value="p Po2 and h Pco2"> p Po2 and h Pco2</label>
+                <label><input type="radio" name="q54" value="Normal Po2 and normal Pco2"> Normal Po2 and normal Pco2</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-55">
+            <p>55- Chronic respiratory failure is not seen in:</p>
+            <div class="options">
+                <label><input type="radio" name="q55" value="Diffuse interstitial fibrosis"> Diffuse interstitial fibrosis</label>
+                <label><input type="radio" name="q55" value="Emphysema"> Emphysema</label>
+                <label><input type="radio" name="q55" value="Pneumothorax"> Pneumothorax</label>
+                <label><input type="radio" name="q55" value="Chronic bronchitis"> Chronic bronchitis</label>
+                <label><input type="radio" name="q55" value="Kyphoscoliosis"> Kyphoscoliosis</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-56">
+            <p>56- A 74 year-old woman with thyroid cancer is admitted due to shortness of breath. What is the best investigation to assess for possible compression of the upper airways?</p>
+            <div class="options">
+                <label><input type="radio" name="q56" value="Arterial blood gases"> Arterial blood gases</label>
+                <label><input type="radio" name="q56" value="Forced vital capacity"> Forced vital capacity</label>
+                <label><input type="radio" name="q56" value="Transfer factor"> Transfer factor</label>
+                <label><input type="radio" name="q56" value="Peak expiratory flow rate"> Peak expiratory flow rate</label>
+                <label><input type="radio" name="q56" value="Flow volume loop"> Flow volume loop</label>
+            </div>
+        </div>
+        
+        
+        <button class="btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        <button class="btn" id="submitBtn" onclick="evaluateQuiz()" style="display: none;">Submit Quiz</button>
+
+        <div class="result" id="result">
+            <h2>Results</h2>
+            <div id="score"></div>
+            <div id="answers-summary"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 56;
+        let score = 0;
+        let timerInterval;
+        const answers = {
+            q1: "Tuberculosis",
+            q2: "Two months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by four months of isoniazid and rifampicin",
+            q3: "cell mediated reaction",
+            q4: "Liver function tests",
+            q5: "Ethambutol",
+            q6: "Pyrazinamide",
+            q7: "Isoniazid",
+            q8: "Streptomycin",
+            q9: "Sputum culture",
+            q10: "It is more specific than tuberculin skin testing",
+            q11: "Isoniazid for 6 months",
+            q12: "Lymphoma",
+            q13: "Pulmonary, alveolar haemorrhage",
+            q14: "Lung carcinoid",
+            q15: "Carcinoid",
+            q16: "Expiratory time more than inspiratory time",
+            q17: "Lobar Consolidation",
+            q18: "Bronchial breathing",
+            q19: "COPD",
+            q20: "Left ventricular failure",
+            q21: "Hypothyroidism",
+            q22: "Pleural aspiration with ultrasound guided",
+            q23: "pH of the pleural fluid",
+            q24: "Pleural fluid lactate dehydrogenase (LDH) > two-thirds of the upper limit of normal serum LDH",
+            q25: "Increased permeability of visceral pleural membrane capillaries",
+            q26: "Pulmonary tuberculosis",
+            q27: "Pulmonary tuberculosis",
+            q28: "Systemic lupus erythematosus",
+            q29: "It means radiographic lung abnormalities with peripheral eosinophilia more than 1500/mcL",
+            q30: "It is often associated with lymphoid neoplasm",
+            q31: "Cystic fibrosis",
+            q32: "Chromosome 7",
+            q33: "Sweat chloride values >60 mmol/L",
+            q34: "Bronchial artery angiography",
+            q35: "Arthropathy",
+            q36: "Niacin deficiency",
+            q37: "High calorie and high fat with pancreatic enzyme supplementation for every meal",
+            q38: "Pseudomonas aeruginosa",
+            q39: "Acute respiratory distress syndrome",
+            q40: "Acute LVF",
+            q41: "Acute pulmonary edema",
+            q42: "Respiratory rate > 24/min",
+            q43: "Pulmonary capillary wedge pressure more than 19",
+            q44: "Mechanical ventilation with low tidal volumes and positive end-expiratory pressure (PEEP)",
+            q45: "PCR of nasopharyngeal swab",
+            q46: "dysuria",
+            q47: "Urine",
+            q48: "Reduced haemoglobin to 5 gm/ dl",
+            q49: "Separates middle lobe from upper lobe on right lung",
+            q50: "Opiate overdose",
+            q51: "Therapeutic trial of proton-pump inhibitor (PPI)",
+            q52: "Obtain carboxyhemoglobin level",
+            q53: "Red blood cell cyanide concentration",
+            q54: "p Po2 and h Pco2",
+            q55: "Pneumothorax",
+            q56: "Flow volume loop"
+        };
+
+
+        function showQuestion() {
+            document.querySelectorAll('.question').forEach((q, index) => {
+                q .style.display = index + 1 === currentQuestion ? 'block' : 'none';
+            });
+            document.getElementById('nextBtn').style.display = currentQuestion < totalQuestions ? 'block' : 'none';
+            document.getElementById('submitBtn').style.display = currentQuestion === totalQuestions ? 'block' : 'none';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            clearInterval(timerInterval);
+            startTimer();
+            showQuestion();
+        }
+
+        function startTimer() {
+            let timeRemaining = 60;
+            document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    if (currentQuestion < totalQuestions) {
+                        nextQuestion();
+                    } else {
+                        evaluateQuiz();
+                    }
+                }
+            }, 1000);
+        }
+
+        function evaluateQuiz() {
+            score = 0;
+            let summary = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const correctAnswer = answers[`q${i}`];
+                const questionElement = document.getElementById(`question-${i}`);
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let questionSummary = `<p><strong>Question ${i}: </strong>${questionElement.querySelector('p').innerText}</p>`;
+
+                options.forEach(option => {
+                    const optionLabel = option.parentElement;
+                    if (option.value === correctAnswer) {
+                        optionLabel.style.color = 'green';
+                    } else if (selectedOption && selectedOption.value === option.value) {
+                        optionLabel.style.color = 'red';
+                    }
+                });
+
+                questionSummary += `<div>Answer: <strong>${selectedOption ? selectedOption.value : 'None selected'}</strong></div>`;
+                questionSummary += `<div>Correct answer: <strong>${correctAnswer}</strong></div>`;
+
+                if (selectedOption && selectedOption.value === correctAnswer) {
+                    score++;
+                    summary += questionSummary + `<p class="correct">Correct</p>`;
+                } else {
+                    summary += questionSummary + `<p class="incorrect">Incorrect</p>`;
+                }
+            }
+
+            document.getElementById('score').textContent = `Your score: ${score} out of ${totalQuestions}`;
+            document.getElementById('answers-summary').innerHTML = summary;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('timer').style.display = 'none'; 
+            document.querySelectorAll('.question').forEach((q) => q.style.display = 'none');
+
+            clearInterval(timerInterval);
+        }
+
+        window.onload = function() {
+            showQuestion();
+            startTimer();
+        };
+        
+        
+        function nextQuestion() {
+    // Increase the current question counter
+            currentQuestion++;
+
+            // Reset the timer
+            clearInterval(timerInterval); // Stop the current timer
+            startTimer(); // Start the timer from the beginning
+
+            // Show the next question
+            showQuestion();
+        }
+        
+    </script>
+</body>
+</html>
