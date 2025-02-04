@@ -338,7 +338,6 @@
                 <label><input type="radio" name="q24" value="Pleural fluid LDH < two-thirds of the upper limit of normal serum LDH"> Pleural fluid LDH < two-thirds of the upper limit of normal serum LDH</label>
                 <label><input type="radio" name="q24" value="Pleural fluid LDH: serum LDH ratio > 0.5"> Pleural fluid LDH: serum LDH ratio > 0.5</label>
                 <label><input type="radio" name="q24" value="Pleural fluid: serum protein ratio < 0.5"> Pleural fluid: serum protein ratio < 0.5</label>
-        5</label>
             </div>
         </div>
         
@@ -401,7 +400,7 @@
             <div class="options">
                 <label><input type="radio" name="q30" value="Elevated serum tryptase suggests aggressive disease."> Elevated serum tryptase suggests aggressive disease.</label>
                 <label><input type="radio" name="q30" value="Eosinophilia is common."> Eosinophilia is common.</label>
-                <label><input type="radio" name="q30" value="It is often associated with lymphoid neoplasm."> It is often associated with lymphoid neoplasm.</label>
+                <label><input type="radio" name="q30" value="It is often associated with lymphoid neoplasm"> It is often associated with lymphoid neoplasm.</label>
                 <label><input type="radio" name="q30" value="Urticaria pigmentosa is the most common clinical manifestation"> Urticaria pigmentosa is the most common clinical manifestation</label>
             </div>
         </div>
@@ -688,7 +687,6 @@
             </div>
         </div>
         
-        
         <button class="btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
         <button class="btn" id="submitBtn" onclick="evaluateQuiz()" style="display: none;">Submit Quiz</button>
 
@@ -700,10 +698,10 @@
     </div>
 
     <script>
-        let currentQuestion = 1;
-        const totalQuestions = 56;
-        let score = 0;
-        let timerInterval;
+        let currentQuestion = 1 ;
+        const totalQuestions = 56 ;
+        let score = 0 ;
+        let timerInterval ;
         const answers = {
             q1: "Tuberculosis",
             q2: "Two months of isoniazid, rifampicin, ethambutol and pyrazinamide, followed by four months of isoniazid and rifampicin",
@@ -713,7 +711,7 @@
             q6: "Pyrazinamide",
             q7: "Isoniazid",
             q8: "Streptomycin",
-            q9: "Sputum culture",
+            q9: "mantoux test",
             q10: "It is more specific than tuberculin skin testing",
             q11: "Isoniazid for 6 months",
             q12: "Lymphoma",
@@ -730,7 +728,7 @@
             q23: "pH of the pleural fluid",
             q24: "Pleural fluid lactate dehydrogenase (LDH) > two-thirds of the upper limit of normal serum LDH",
             q25: "Increased permeability of visceral pleural membrane capillaries",
-            q26: "Pulmonary tuberculosis",
+            q26: "SLE",
             q27: "Pulmonary tuberculosis",
             q28: "Systemic lupus erythematosus",
             q29: "It means radiographic lung abnormalities with peripheral eosinophilia more than 1500/mcL",
